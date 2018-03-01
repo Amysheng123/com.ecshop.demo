@@ -1,0 +1,15 @@
+ 14:48:03.407 [main] INFO  com.ecshop.test.LoginTest findElementByXPath - //a[@href='user.php']定位已找到元素
+ 14:48:04.282 [main] INFO  com.ecshop.test.LoginTest findElementByName - username定位已找到元素
+ 14:48:04.412 [main] INFO  com.ecshop.test.LoginTest findElementByName - password定位已找到元素
+ 14:48:04.469 [main] INFO  com.ecshop.test.LoginTest findElementByName - submit定位已找到元素
+ 14:48:04.830 [main] INFO  com.ecshop.test.LoginTest findElementByXPath - //div[@class='box_1']/div/div/p定位已找到元素
+ 14:48:15.608 [main] INFO  com.ecshop.test.LoginTest findElementByXPath - //a[@href='user.php']定位已找到元素
+ 14:48:15.956 [main] INFO  com.ecshop.test.LoginTest findElementByName - username定位已找到元素
+ 14:48:16.039 [main] INFO  com.ecshop.test.LoginTest findElementByName - password定位已找到元素
+ 14:48:16.101 [main] INFO  com.ecshop.test.LoginTest findElementByName - submit定位已找到元素
+ 14:48:16.235 [main] INFO  com.ecshop.test.LoginTest findElementByXPath - //div[@class='box_1']/div/div/p定位已找到元素
+ 14:48:16.680 [main] ERROR com.ecshop.test.LogTest LogTest1 - 哈哈，error
+ 14:48:16.681 [main] WARN  com.ecshop.test.LogTest LogTest2 - 哈哈，warn
+ 14:48:16.681 [main] INFO  com.ecshop.test.LogTest LogTest3 - 哈哈，info
+ 14:48:16.682 [main] DEBUG com.ecshop.test.LogTest LogTest4 - 哈哈，debug
+ 14:48:16.683 [main] TRACE com.ecshop.test.LogTest LogTest5 - 哈哈，trace
