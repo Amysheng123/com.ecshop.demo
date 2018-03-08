@@ -2,20 +2,15 @@ package com.ecshop.WebDriverUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 
-import com.ecshop.testutils.RemoteLogWebDriver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.GeckoDriverService;
 import org.openqa.selenium.ie.InternetExplorerDriverService;
-import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.remote.service.DriverService;
-import org.testng.annotations.Test;
+
+import com.ecshop.testutils.RemoteLogWebDriver;
 
 public class WebDriverUtils {
     private static DriverService service;

@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Configuration status="WARN">
-    <properties>
-        <property name="log_home">logs</property>
-    </properties>
-    <Appenders>
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{ HH:mm:ss.SSS} [%t] %-5level %logger{36} %M - %msg%n"/>
-        </Console>
-        <File name="Logfile" fileName="${log_home}/test.log" append="false">
-            <PatternLayout pattern="%d{ HH:mm:ss.SSS} [%t] %-5level %logger{36} %M - %msg%n"/>
-        </File>
-        <RollingFile name="rollingLogfile" fileName="${log_home}/rollingtest.log" filePattern="${log_home}/$${date:yyyy-MM}/test-%d{MM-dd-yyyy}-%i.log">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} %M - %msg%n"/>
-            <SizeBasedTriggeringPolicy size="20MB"/>
-            <TimeBasedTriggeringPolicy interval="1" />
-            <DefaultRolloverStrategy max="20" />
+	<properties>
+		<property name="log_home">logs</property>
+	</properties>
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY" />
+			<PatternLayout
+				pattern="%d{ HH:mm:ss.SSS} [%t] %-5level %logger{36} %M - %msg%n" />
+		</Console>
+		<File name="ERROR" fileName="${log_home}/error.log" append="false">
+			<ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY" />
+			<PatternLayout
+				pattern="%d{yyyy.MM.dd 'at' HH:mm:ss.SSS} [%t] %-5level %logger{36} %M - %msg%n" />
+		</File>
+		<RollingFile name="RollingFile" fileName="${log_home}/app.log"
+                     filePattern="${log_home}/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <Policies>  
+                <TimeBasedTriggeringPolicy interval="1" />  
+                <SizeBasedTriggeringPolicy size="10 MB" />  
+            </Policies>  
+            <DefaultRolloverStrategy max="20" /> 
         </RollingFile>
-    </Appenders>
-    <Loggers>
-        <Root level="trace">
-            <AppenderRef ref="Console"/>
-            <AppenderRef ref="Logfile" />
-            <AppenderRef ref="rollingLogfile" />
-        </Root>
-    </Loggers>
+	</Appenders>
+	<Loggers>
+<!--	<logger name="com.ecshop.test" level="error" additivity="false">
+		<AppenderRef ref="rollingLogfile"/>
+		</logger>
+		<logger name="com.ecshop.test" level="error" additivity="false">
+		<AppenderRef ref="ERROR"/>
+		</logger>
+-->
+		<Root level="trace">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="ERROR"/>
+			<AppenderRef ref="RollingFile" />
+		</Root>
+	</Loggers>
 </Configuration>

@@ -2,7 +2,6 @@ package com.ecshop.testutils;
 
 import java.util.concurrent.TimeUnit;
 
-import org.apache.xmlbeans.impl.xb.xmlconfig.ConfigDocument;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

@@ -1,7 +1,6 @@
 package com.ecshop.testutils;
 
 import java.util.Properties;
-import java.util.Set;
 
 import org.testng.annotations.DataProvider;
 

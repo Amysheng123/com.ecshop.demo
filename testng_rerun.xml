@@ -4,13 +4,12 @@
   	<listeners>
 		<listener class-name="com.ecshop.tengListner.EcshopTestListner" />
 		<listener class-name="com.ecshop.tengListner.RetryListener" />
-		<listener class-name="com.ecshop.tengListner.EmailedReporter" />
 	</listeners>
 
-	<test name="finish">
+	<test name="round1">
 		<classes>
+			<class name="com.ecshop.test.TestNGDemo1" />
 			<class name="com.ecshop.testutils.AfterEcshopTest" />
-			<class name="com.ecshop.test.LoginTest" />
 		</classes>
 	</test>
 <!--	<test name="round1">
